@@ -298,8 +298,24 @@ public class PlatformManager {
         return queryCapability(Capability.CONFIGURATION).getConfiguration();
     }
 
+    /**
+     * Get the current supported {@link SideEffect}s.
+     *
+     * <p>If no platform has been registered yet, then a fallback value
+     * will be returned.</p>
+     *
+     * @return the supported side effects
+     */
     public Collection<SideEffect> getSupportedSideEffects() {
         return queryCapability(Capability.WORLD_EDITING).getSupportedSideEffects();
+    }
+
+    /**
+     * Get the initialized state of the Platform.
+     * @return whether the platform is initialized
+     */
+    public boolean isInitialized() {
+        return initialized.get();
     }
 
     /**
