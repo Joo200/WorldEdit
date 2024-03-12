@@ -44,6 +44,8 @@ import org.bukkit.entity.Villager;
 import org.bukkit.entity.WaterMob;
 import org.bukkit.entity.minecart.ExplosiveMinecart;
 
+import java.util.UUID;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 class BukkitEntityProperties implements EntityProperties {
@@ -66,6 +68,11 @@ class BukkitEntityProperties implements EntityProperties {
     BukkitEntityProperties(Entity entity) {
         checkNotNull(entity);
         this.entity = entity;
+    }
+
+    @Override
+    public UUID getUniqueId() {
+        return entity.getUniqueId();
     }
 
     @Override

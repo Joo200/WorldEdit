@@ -43,6 +43,8 @@ import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.trading.Merchant;
 
+import java.util.UUID;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public class ForgeEntityProperties implements EntityProperties {
@@ -52,6 +54,11 @@ public class ForgeEntityProperties implements EntityProperties {
     public ForgeEntityProperties(Entity entity) {
         checkNotNull(entity);
         this.entity = entity;
+    }
+
+    @Override
+    public UUID getUniqueId() {
+        return entity.getUUID();
     }
 
     @Override

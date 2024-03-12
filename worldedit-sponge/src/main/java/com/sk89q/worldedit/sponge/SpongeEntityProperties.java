@@ -42,6 +42,8 @@ import org.spongepowered.api.entity.projectile.Projectile;
 import org.spongepowered.api.entity.vehicle.Boat;
 import org.spongepowered.api.entity.vehicle.minecart.Minecart;
 
+import java.util.UUID;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public class SpongeEntityProperties implements EntityProperties {
@@ -51,6 +53,11 @@ public class SpongeEntityProperties implements EntityProperties {
     public SpongeEntityProperties(Entity entity) {
         checkNotNull(entity);
         this.entity = entity;
+    }
+
+    @Override
+    public UUID getUniqueId() {
+        return entity.uniqueId();
     }
 
     @Override

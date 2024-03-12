@@ -19,10 +19,12 @@
 
 package com.sk89q.worldedit.entity.metadata;
 
+import com.sk89q.worldedit.util.Identifiable;
+
 /**
  * Describes various classes of entities.
  */
-public interface EntityProperties {
+public interface EntityProperties extends Identifiable {
 
     /**
      * Test whether the entity is a player-derived entity.
