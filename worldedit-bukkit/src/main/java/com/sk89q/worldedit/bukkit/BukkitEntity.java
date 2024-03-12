@@ -50,6 +50,10 @@ class BukkitEntity implements Entity {
         this.entityRef = new WeakReference<>(entity);
     }
 
+    org.bukkit.entity.Entity getReference() {
+        return entityRef.get();
+    }
+
     @Override
     public Extent getExtent() {
         org.bukkit.entity.Entity entity = entityRef.get();

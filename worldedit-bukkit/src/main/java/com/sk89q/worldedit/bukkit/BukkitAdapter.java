@@ -327,6 +327,17 @@ public class BukkitAdapter {
     }
 
     /**
+     * Get a Bukkit entity from a WorldEdit entity if the entity can be resolved.
+     *
+     * @param entity the WorldEdit entity
+     * @return a BukkitEntity or null
+     */
+    public static @Nullable org.bukkit.entity.Entity adapt(Entity entity) {
+        checkNotNull(entity);
+        return ((BukkitEntity)entity).getReference();
+    }
+
+    /**
      * Create a Bukkit Material form a WorldEdit ItemType.
      *
      * @param itemType The WorldEdit ItemType
